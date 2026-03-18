@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mock-llm-mcp"
+version = "1.0.0"
+description = "MCP server for Mock LLM API — mock OpenAI, Anthropic, and Google Gemini responses for testing AI integrations"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["mcp", "mock", "llm", "openai", "anthropic", "gemini", "testing", "ai", "agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Testing",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+mock-llm-mcp = "mock_llm_mcp.server:main"
+
+[project.urls]
+Homepage = "https://rebaselabs.online"
+Repository = "https://github.com/rebaselabs-framework/mock-llm-mcp"
+Documentation = "https://mock-llm-api.rebaselabs.online"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mock_llm_mcp"]
